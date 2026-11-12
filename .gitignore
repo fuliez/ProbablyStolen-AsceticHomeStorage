@@ -1,0 +1,14 @@
+.local/
+artifacts/
+**/bin/
+**/obj/
+config.local.json
+*.dll
+*.exe
+*.pdb
+*.zip
+*.log
+*.vdf
+*.acf
+.env
+.vs/

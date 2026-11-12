@@ -1,0 +1,16 @@
+name: Check
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.410'
+      - run: dotnet run --project tests/Contracts/Contracts.csproj -c Release
+      - run: dotnet run --project tests/Contracts/Contracts.csproj -c Debug
+      - shell: pwsh
+        run: ./scripts/check.ps1
