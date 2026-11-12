@@ -24,3 +24,8 @@
 SteamCMD 路径通过环境变量 STEAMCMD_PATH、参数或忽略的 config.local.json 提供。绝不把账号信息或凭据放入仓库。上传后核对 Steam 返回 ID、匿名 metadata 的 visibility=0、标题、描述和 preview_url；SteamCMD 退出成功本身不代表公开验证通过。
 
 源代码仓库公开，名称 ProbablyStolen-AsceticHomeStorage。首次发行版本 0.1.1，具体发布结果记录于 agent.md。
+
+## 已发布
+
+- [Steam 工坊项目 3838428231](https://steamcommunity.com/sharedfiles/filedetails/?id=3838428231)，已通过匿名 metadata 核实为 Public。后续更新省略 NewItem，保持同一 ID 与公开可见性。
+- [GitHub Release v0.1.1](https://github.com/fuliez/ProbablyStolen-AsceticHomeStorage/releases/tag/v0.1.1)，附运行包及 SHA256SUMS.txt，下载复核通过。不可覆盖既有发布标签和资产。

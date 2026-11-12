@@ -55,3 +55,5 @@
 - ZIP 恰为 manifest、Mod DLL、preview.png 三个文件，逐项 hash 与已安装的独立 Mods 目录一致；旧两文件预览安装已升级成功。
 - 更新后的游戏菜单名称/封面尚未重启目视确认；用户验收针对相同补丁逻辑的 0.1.0 预览，不把元数据更新误写为另一次观察。
 - 首次隐藏创建新项目 3838428231，然后对同一 ID 更新为公开。匿名 Steam metadata 验证 result=1、visibility=0、consumer_app_id=4348910、双语标题、完整双语描述与 preview_url 均正确。
+- [main CI](https://github.com/fuliez/ProbablyStolen-AsceticHomeStorage/actions/runs/43240776012) 与 [tag CI](https://github.com/fuliez/ProbablyStolen-AsceticHomeStorage/actions/runs/43240779994) 均成功，包括两种配置行为检查、仓库规则、PS7/5.1 离线发布流程。
+- GitHub Release 运行 ZIP 已下载核验：SHA-256 `F322876EC9A3D45C23B97B52295114DE57EE6949415D927B80A57257E5CF3D86`，与发布校验文件和本地包一致；内部三个文件逐项与安装内容一致。
