@@ -25,7 +25,9 @@ Restore only the ascetic main-storage restriction after the property is fully pa
 - Release clean Rebuild produced identical DLL SHA-256: 0C966E3CD887F633E2B733DB45033FB404C454773EDEBFF1791E9D94A171BEAA.
 - ZIP contains exactly the independent DLL and manifest; both entry hashes match the local installation.
 - Installed with game closed to Mods/ascetic_home_storage. Original my_mod git status remains clean.
-- Remote creation/push status will be verified after committing the reviewed source.
+- Public repository created and main pushed: https://github.com/fuliez/ProbablyStolen-AsceticHomeStorage . Remote API verified PUBLIC and main head matched local commit 8f59d0e00601274666257f7b1860258d7dbfc71d.
+- Initial GitHub CI passed both contract configurations and script/repository policy: https://github.com/fuliez/ProbablyStolen-AsceticHomeStorage/actions/runs/43171146383 . Existing toolchain emits .NET 6 support and old action-runtime notices; tests succeed. Future maintenance can upgrade the development toolchain independently of the netstandard2.1 runtime.
+- Script checks also passed under Windows PowerShell 5.1. Final documentation-only verification commit skips duplicate CI; no production/build/test logic changed after the successful run.
 
 ## Still pending
 

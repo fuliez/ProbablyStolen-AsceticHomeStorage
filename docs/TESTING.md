@@ -13,6 +13,7 @@
 - 干净 Rebuild 后 DLL SHA-256 相同：`0C966E3CD887F633E2B733DB45033FB404C454773EDEBFF1791E9D94A171BEAA`。
 - ZIP 恰好两个运行文件；逐项 SHA-256 与本地安装一致，未包含依赖或源码。
 - 游戏关闭时已安装至独立的 `Mods/ascetic_home_storage`。旧按键项目 `git status --short` 仍为空。
+- GitHub 初次 [CI](https://github.com/fuliez/ProbablyStolen-AsceticHomeStorage/actions/runs/43171146383) 已通过两种配置行为检查与仓库规则；脚本规则另在 Windows PowerShell 5.1 通过。
 
 ## 游戏内验收（全部待完成）
 
