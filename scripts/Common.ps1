@@ -14,11 +14,24 @@ function Resolve-GameDir([string]$GameDir) {
     }
     return $resolved
 }
-function Assert-RuntimeFolder([string]$Path) {
-    $expected = @('manifest.xml','ProbablyStolen.AsceticHomeStorage.dll')
+function Get-LocalSetting([string]$Name) {
+    $path = Join-Path $ProjectRoot 'config.local.json'
+    if (Test-Path -LiteralPath $path) {
+        $settings = Get-Content -LiteralPath $path -Raw -Encoding utf8 | ConvertFrom-Json
+        if ($settings.PSObject.Properties.Name -contains $Name) { return [string]$settings.$Name }
+    }
+    return ''
+}
+function Get-ModVersion {
+    [xml]$props = Get-Content -LiteralPath (Join-Path $ProjectRoot 'Directory.Build.props') -Raw -Encoding utf8
+    return [string]$props.Project.PropertyGroup.Version
+}
+function Assert-RuntimeFolder([string]$Path, [switch]$AllowOlderVersion) {
+    $expected = @('manifest.xml','ProbablyStolen.AsceticHomeStorage.dll','preview.png')
     $actual = @(Get-ChildItem -LiteralPath $Path -Force)
-    if ($actual.Count -ne 2 -or @($actual | Where-Object { $_.PSIsContainer -or $_.Name -notin $expected }).Count) { throw 'Unexpected runtime files.' }
+    if ($AllowOlderVersion -and $actual.Count -eq 2) { $expected = @('manifest.xml','ProbablyStolen.AsceticHomeStorage.dll') }
+    if ($actual.Count -ne $expected.Count -or @($actual | Where-Object { $_.PSIsContainer -or $_.Name -notin $expected }).Count) { throw 'Unexpected runtime files.' }
     [xml]$manifest = Get-Content -LiteralPath (Join-Path $Path 'manifest.xml') -Raw -Encoding utf8
     [xml]$props = Get-Content -LiteralPath (Join-Path $ProjectRoot 'Directory.Build.props') -Raw -Encoding utf8
-    if ($manifest.Manifest.ID -ne 'ascetic_home_storage' -or $manifest.Manifest.ModVersion -ne $props.Project.PropertyGroup.Version) { throw 'Manifest ID/version mismatch.' }
+    if ($manifest.Manifest.ID -ne 'ascetic_home_storage' -or (!$AllowOlderVersion -and $manifest.Manifest.ModVersion -ne $props.Project.PropertyGroup.Version)) { throw 'Manifest ID/version mismatch.' }
 }

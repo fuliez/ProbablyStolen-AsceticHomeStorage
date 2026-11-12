@@ -1,0 +1,28 @@
+[h1]Hardship Rewarded - Ascetic Storage Restored After Home Purchase[/h1]
+By fuliezi.
+After hardship comes a home, and room to keep your belongings.
+
+[h2]Features[/h2]
+[list]
+[*]Only after an ascetic character buys the property outright or pays off its mortgage, restore main storage from 16×10 (160 cells) to the normal 24×10 (240 cells).
+[*]Works with existing fully paid ascetic saves; keeps the vanilla restriction before purchase or while paying a mortgage.
+[*]Preserves the ascetic perk, its original -4 point cost and other perk rules. Minimalist characters, characters without ascetic and other containers are unchanged.
+[/list]
+
+[h2]Installation and removal[/h2]
+Subscribe, enable in the game's Mods menu, inspect permissions and restart. No prerequisite mods; an in-game cover is included. This is completely independent of the author's keyboard mod.
+Before disabling or uninstalling, move items from added columns 17–24 into the original 16×10 area or other containers, save and exit, then disable/unsubscribe and restart.
+
+[h2]Disabling and save considerations[/h2]
+The mod does not directly read or write saves, but items in the added area are saved normally by the game. Back up saves before game updates or mod changes.
+Owner-reported test: after disabling, items entirely in the added area disappeared from view. Partially overlapping items remained at the vanilla boundary and could be retrieved, but could not be placed back outside the original grid. After re-enabling, the tested items were still in the added area. This does not establish permanent deletion or guarantee recovery across future versions or every save operation performed while disabled. Avoid overwriting your only save if storage behaves abnormally.
+
+[h2]Version and compatibility[/h2]
+Mod version: 0.1.1. Target game: 100-Rev13 / 1.0.0.13, Steam build 26525552. The menu retains the internal identifier 0.46D, which is the only identifier declared. Other versions are untested.
+The owner tested and accepted the core purchase unlock and disabling behavior above. Recheck compatibility after game updates.
+
+[h2]Permissions[/h2]
+Uses the native mod loader and the game's Harmony. No original game assemblies are overwritten, no additional capabilities are required, and no game or Harmony DLLs are distributed.
+
+[h2]Source[/h2]
+[url=https://github.com/fuliez/ProbablyStolen-AsceticHomeStorage]GitHub source code[/url]

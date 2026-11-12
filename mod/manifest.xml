@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Manifest>
   <ID>ascetic_home_storage</ID>
-  <Name>Ascetic Home Storage_苦行僧购房后恢复仓库</Name>
+  <Name>苦尽甘来-苦行僧购房后仓库恢复 / Hardship Rewarded - Ascetic Storage Restored After Home Purchase</Name>
   <Author>fuliezi</Author>
-  <ModVersion>0.1.0</ModVersion>
+  <ModVersion>0.1.1</ModVersion>
   <Description>仅在苦行僧角色全款购房或还清房贷后，将主仓库从 16×10 恢复为正常的 24×10。保留特性、特性点和其他仓库的原版规则。
 
 Restore ascetic main storage from 16×10 to the normal 24×10 only after buying the property outright or paying off its mortgage. Preserve perks, perk points and vanilla rules for other inventories.</Description>

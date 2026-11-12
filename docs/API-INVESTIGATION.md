@@ -25,7 +25,7 @@
 | `PlayerStore.OnMortgagePaidOff()` | IsPropertyPaid=true，再调用 OnStoreOwned，属于付清房产 |
 | `PlayerStore.OnStoreOwned()` | 两种付清路径的共同完成入口；没有对应的原生购房通知事件 |
 | `GameGridInventory.SetShape(int,int)` | 修改格子形状并校验；不移动物品坐标。扩大范围保留原有坐标 |
-| `PlayerStore.DecodeSaveItem()` | 把解码容器内物品放入当前目标仓库，无法放入的对象会走原版清理路径；故读档前必须保持大尺寸，停用前必须清空新增列 |
+| `PlayerStore.DecodeSaveItem()` | 使用 UncheckedAccept 迁入物品；其本身不因物品超出边界拒收。DestroyIfUnplaced 只清理最终无父容器的对象，不能据此认定缩仓必然永久删除超界物品 |
 
 ## 实现选择
 
@@ -37,4 +37,4 @@
 
 ## 验证边界
 
-Release/Debug 实际引用构建与行为替身测试、实际扫描器均通过；具体见 TESTING.md。游戏内视觉、实际购房操作与实际存档往返尚待用户验收。没有启动游戏或操作存档。
+Release/Debug 实际引用构建与行为替身测试、实际扫描器均通过。所有者后续报告核心购房解锁功能符合预期，停用时超界物品不显示、部分跨界物品可取出、重新启用后测试物品仍在。具体证据与未报告分支见 TESTING.md。AI 没有启动游戏或操作存档。
